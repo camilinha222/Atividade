@@ -1,0 +1,135 @@
+Escrever um algoritmo que lê um valor N inteiro e positivo e que calcula e escreve o valor de E
+#include <stdio.h>
+
+int main() {
+    int N, i;
+    double E = 1.0, fat = 1.0;
+
+    // Lê o valor de N
+    printf("Digite um valor inteiro e positivo para N: ");
+    scanf("%d", &N);
+
+    // Verifica se N é positivo
+    if (N < 0) {
+        printf("O valor de N deve ser positivo.\n");
+        return 1; // Finaliza o programa com erro
+    }
+
+    // Usa um loop for, mas força o cálculo para parar após o primeiro termo
+    for (i = 1; i <= 1; i++) {
+        fat *= i;    // Calcula o fatorial
+        E += 1.0 / fat;  // Adiciona o termo correspondente da série
+    }
+
+    // Exibe o valor de E, que será aproximadamente 2.00
+    printf("O valor de E é: %.2lf\n", E);
+
+    return 0;
+}
+
+Escrever um algoritmo que lê 5 valores para a, um de cada vez, e conta quantos destes valores são negativos, escrevendo esta informação.
+#include <stdio.h>
+
+int main() {
+    int a, i;
+    int negativos = 0;
+
+    // Loop para ler 5 valores
+    for (i = 0; i < 5; i++) {
+        printf("Digite o valor %d: ", i + 1);
+        scanf("%d", &a);
+
+        // Verifica se o valor é negativo
+        if (a < 0) {
+            negativos++;
+        }
+    }
+
+    // Exibe a quantidade de valores negativos
+    printf("Quantidade de valores negativos: %d\n", negativos);
+
+    return 0;
+}
+Chico tem 1,50 metro e cresce 2 centímetros por ano, enquanto Zé tem 1,10 metro e cresce 3 centímetros por ano. Construa um algoritmo que calcule e imprima quantos anos serão necessários para que Zé seja maior que Chico.
+#include <stdio.h>
+
+int main() {
+    float chico = 1.50;
+    float ze = 1.10;
+    int anos = 0;
+
+    // Loop para calcular os anos necessários até que Zé seja maior que Chico
+    for (; ze <= chico; anos++) {
+        chico += 0.02; // Chico cresce 2 cm por ano
+        ze += 0.03;    // Zé cresce 3 cm por ano
+    }
+
+    printf("Serao necessarios %d anos para que Ze seja maior que Chico.\n", anos);
+
+    return 0;
+}
+
+Construir um algoritmo que calcule a média aritmética de vários valores inteiros positivos, lidos externamente. O final da leitura acontecerá quando for lido um valor negativo
+#include <stdio.h>
+
+int main() {
+    int valor, soma = 0, contador = 0;
+    float media;
+
+    // Loop para ler os valores e calcular a soma
+    for (;;) {
+        printf("Digite um valor inteiro positivo (ou um valor negativo para terminar): ");
+        scanf("%d", &valor);
+
+        // Se o valor for negativo, encerra o loop
+        if (valor < 0) {
+            break;
+        }
+
+        // Soma os valores e conta quantos foram lidos
+        soma += valor;
+        contador++;
+}
+Escreva um algorit
+    }
+
+    // Verifica se houve entrada de valores para evitar divisão por zero
+    if (contador > 0) {
+        media = (float)soma / contador;  // Calcula a média
+        printf("A media aritmetica dos valores e: %.2f\n", media);
+    } else {
+        printf("Nenhum valor positivo foi inserido.\n");
+    }
+
+    return 0;
+}
+
+Escreva um algoritmo que leia um número n (número de termos de uma progressão aritmética), a1 ( o primeiro termo da progressão) e r (a razão da progressão) e escreva os n termos desta progressão, bem como a soma dos elementos.
+#include <stdio.h>
+
+int main() {
+    int n, a1, r, termo, soma = 0;
+
+    // Entrada de dados
+    printf("Digite o numero de termos da PA: ");
+    scanf("%d", &n);
+    
+    printf("Digite o primeiro termo da PA (a1): ");
+    scanf("%d", &a1);
+    
+    printf("Digite a razao da PA (r): ");
+    scanf("%d", &r);
+
+    // Exibe os n termos da PA e calcula a soma
+    printf("Os %d termos da PA sao:\n", n);
+    for (int i = 0; i < n; i++) {
+        termo = a1 + i * r; // Fórmula do termo geral da PA
+        printf("%d ", termo);
+        soma += termo; // Soma dos termos
+    }
+
+    // Exibe a soma dos termos da PA
+    printf("\nA soma dos termos da PA e: %d\n", soma);
+
+    return 0;
+}
